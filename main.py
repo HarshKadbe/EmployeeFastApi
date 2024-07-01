@@ -24,7 +24,7 @@ def read_employees(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)
 def read_employee(employee_id: int, db: Session = Depends(get_db)):
     db_employee = crud.get_employee(db, employee_id=employee_id)
     print(employee_id, db_employee)
-    print(f"Employee ID: {employee_id}, DB Employee: {db_employee}")  # Debug statement
+    print(f"Employee ID: {employee_id}, DB Employee: {db_employee}") 
 
     if db_employee is None:
         raise HTTPException(status_code=404, detail="Employee not found")
